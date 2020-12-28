@@ -11,7 +11,7 @@ RUN apt-get update \
 &&  apt-get install -y npm
 
 RUN apt-get update \
-apt-get install -y git
+&& apt-get install -y git
 
 RUN mkdir /home/Project \
 &&  cd /home/Project \
