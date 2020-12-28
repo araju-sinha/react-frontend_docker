@@ -12,10 +12,11 @@ RUN apt-get update \
 
 RUN apt-get update \
 apt-get install -y git
-RUN mkdir /home/Project
-        cd /home/Project \
-		git clone https://github.com/OCTO28122020-Akanksha/Sample_Project.git
 
+RUN mkdir /home/Project \
+&&  cd /home/Project \
+
+RUN git clone https://github.com/OCTO28122020-Akanksha/Sample_Project.git
 
 RUN node -v \
 &&  npm -v
