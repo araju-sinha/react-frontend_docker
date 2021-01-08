@@ -2,25 +2,34 @@ FROM ubuntu
 
 MAINTAINER Akanksha Srivastava<akankshaS542@gmail.com>
 
-RUN apt-get update \
+RUN apt-get update
+RUN apt-get upgrade -y 
 
-&&  apt-get install -y nodejs
+RUN apt-get install -y nodejs
 
-RUN apt-get update \
+RUN apt-get update 
 
-&&  apt-get install -y npm
+RUN apt-get install -y npm
 
-RUN apt-get update \
-&& apt-get install -y git
+RUN node -v
+RUN npm version
 
-RUN mkdir /home/Project \
-&&  cd /home/Project \
+RUN mkdir -p /app/sourcecode
 
-RUN git clone https://github.com/OCTO28122020-Akanksha/Sample_Project.git
+WORKDIR /app/sourcecode
 
-RUN node -v \
-&&  npm -v
+COPY ["package.json", "package-lock.json", "./"]
 
-RUN exit
- 
-CMD /bin/echo "Done!"
+RUN npm install --production
+
+RUN npm install -g create-react-app
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["D:\Frontend-Pipeline"]
+
+CMD ["npm", "start"]
