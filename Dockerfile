@@ -1,6 +1,6 @@
 FROM ubuntu
 
-MAINTAINER Akanksha Srivastava<akankshaS542@gmail.com>
+MAINTAINER Aarju Sinha<aarju.sinha024@gmail.com>
 
 RUN apt-get update
 RUN apt-get upgrade -y 
@@ -29,7 +29,5 @@ COPY . .
 RUN npm run build
 
 EXPOSE 3000
-
-CMD ["D:\Frontend-Pipeline"]
 
 CMD ["npm", "start"]
