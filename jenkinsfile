@@ -1,14 +1,15 @@
 pipeline {
   environment {
-    registry = "araju024/new_imge"
+    registry = "araju024/new_imge_react"
     registryCredential = 'araju_docker'
     dockerImage = ''
   }
   agent any
+  tools {nodejs "node" }
   stages {
     stage('Cloning Git') {
       steps {
-	    git credentialsId: 'bd8cbf0a-a257-422d-90dd-ac9175393dac', url: 'https://github.com/OCTO01032020-araju/node_try.git'
+        git 'https://github.com/araju-sinha/react-frontend_docker.git'
       }
     }
     stage('Building image') {
@@ -20,11 +21,16 @@ pipeline {
     }
     stage('Deploy Image') {
       steps{
-        script {
-          docker.withRegistry( '', registryCredential ) {
+         script {
+            docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
           }
         }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   }
