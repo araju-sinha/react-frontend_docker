@@ -15,7 +15,7 @@ steps:
         [
           'run',
           'deploy',
-          'cra-cloud-run',
+          'react-ci-cd',
           '--image',
           'gcr.io/$PROJECT_ID/react-ci-cd',
           '--region',
