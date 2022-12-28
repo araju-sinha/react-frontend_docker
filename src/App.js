@@ -8,7 +8,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Welcome <code> react sample web app </code>.
-//           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -16,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn and deploy React
         </a>
       </header>
     </div>
