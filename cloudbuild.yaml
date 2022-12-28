@@ -17,7 +17,7 @@ steps:
           'deploy',
           'cra-cloud-run',
           '--image',
-          'gcr.io/$PROJECT_ID/cra-cloud-run',
+          'gcr.io/$PROJECT_ID/react-ci-cd',
           '--region',
           'us-central1',
           '--platform',
@@ -26,4 +26,4 @@ steps:
           '--allow-unauthenticated',
         ]
 images:
-  - gcr.io/$PROJECT_ID/cra-cloud-run
+  - gcr.io/$PROJECT_ID/react-ci-cd
