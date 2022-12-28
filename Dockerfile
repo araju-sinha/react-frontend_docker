@@ -11,19 +11,12 @@ RUN apt-get update
 
 RUN apt-get install -y npm
 
-RUN node -v
-RUN npm version
-
 RUN mkdir -p /app/sourcecode
-
 WORKDIR /app/sourcecode
-
 COPY ["package.json", "package-lock.json", "./"]
 
 RUN npm install --production
-
 RUN npm install -g create-react-app
-
 COPY . .
 
 RUN npm run build
