@@ -1,15 +1,15 @@
 steps:
-# frontend deployment
-# Step 1: For installing dependencies
- - name: "gcr.io/cloud-builders/npm"
-   id: Install
-   args: ["install"]
+   # frontend deployment
+   # Step 1: For installing dependencies
+    - name: "gcr.io/cloud-builders/npm"
+      id: Install
+      args: ["install"]
 
 
-# Step 2: For creating optinimized build
- - name: "gcr.io/cloud-builders/npm"
-   id: Build
-   args: ["run", "build"]
+   # Step 2: For creating optinimized build
+    - name: "gcr.io/cloud-builders/npm"
+      id: Build
+      args: ["run", "build"]
       
     # Deploy container images to Cloud Run
     - name: 'gcr.io/cloud-builders/gcloud'
