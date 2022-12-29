@@ -6,7 +6,7 @@ steps:
       
     # push the container images to Container Registry
     - name: 'gcr.io/cloud-builders/docker'
-      args: ['push', "gcr.io/$PROJECT_ID:cloud-run"]
+      args: ["push", "gcr.io/$PROJECT_ID:cloud-run"]
 #       ['push', 'gcr.io/$PROJECT_ID/cra-cloud-run']
       
     # Deploy container images to Cloud Run
@@ -15,7 +15,7 @@ steps:
         [
           'run',
           'deploy',
-          'react-ci-cd',
+          'cloud-run',
           '--image',
           'gcr.io/$PROJECT_ID/cloud-run',
           '--region',
