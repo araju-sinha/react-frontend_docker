@@ -3,13 +3,11 @@ steps:
     - name: 'gcr.io/cloud-builders/docker'
       id: Build Image
       args: ["build", "-t", "gcr.io/$PROJECT_ID/cloud-run", "."]
-#       ['build', '-t', 'gcr.io/$PROJECT_ID/cra-cloud-run' ]
       
     # push the container images to Container Registry
     - name: 'gcr.io/cloud-builders/docker'
       id: Push Imange
       args: ["push", "gcr.io/$PROJECT_ID/cloud-run"]
-#       ['push', 'gcr.io/$PROJECT_ID/cra-cloud-run']
       
     # Deploy container images to Cloud Run
     - name: 'gcr.io/cloud-builders/gcloud'
