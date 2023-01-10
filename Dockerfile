@@ -20,7 +20,6 @@ RUN npm install -g create-react-app
 COPY . .
 
 RUN npm run build
-
 EXPOSE 3000
 
 CMD ["npm", "start"]
