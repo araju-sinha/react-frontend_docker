@@ -9,7 +9,7 @@ steps:
       id: Push Imange
       args: ["push", "gcr.io/$PROJECT_ID/cloud-run"]
       
-    # Deploy container images to Cloud Run
+    # Deploy the container images to Cloud Run service
     - name: 'gcr.io/cloud-builders/gcloud'
       id: Deploy to Cloud Run
       args:
